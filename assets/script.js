@@ -39,7 +39,7 @@ $('button').on('click', async () => {
 });
 
 let target = document.querySelector('a#botton');
-var area = trarget.getBoundingClientRect();
+var area = target.getBoundingClientRect();
 console.log(area.top, area.right, area.bottom, area.left);
 
 let cursor = document.querySelector('#cursor');
