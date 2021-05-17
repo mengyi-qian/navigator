@@ -8,6 +8,11 @@ const ry = window.screen.height + 30;
 //   $('#ry').text(`height: ${ry - 30}`);
 // })();
 
+let target = document.querySelector('a#button');
+var area = target.getBoundingClientRect();
+console.log(area.top, area.right, area.bottom, area.left);
+
+
 $('button').on('click', async () => {
   const pms = await DeviceOrientationEvent.requestPermission();
   if (pms !== "granted") {
@@ -35,14 +40,14 @@ $('button').on('click', async () => {
 
     $('#cursor').css('top', top + "px");
     $('#cursor').css('left', left + "px");
+    
+    let cursor = document.querySelector('#cursor');
+    if ( cursor.top > area.top && cursor.top > area.bottom && cursor.left > area.left && cursor.left < area.right ) {
+      target.innerHTML = "thanks";
+    }
   });
 });
 
-let target = document.querySelector('a#button');
-var area = target.getBoundingClientRect();
-console.log(area.top, area.right, area.bottom, area.left);
 
-let cursor = document.querySelector('#cursor');
-if ( cursor.top > area.top && cursor.top > area.bottom && cursor.left > area.left && cursor.left < area.right ) {
-  target.innerHTML = "thanks"
-}
+
+
