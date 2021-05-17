@@ -38,7 +38,7 @@ $('button').on('click', async () => {
   });
 });
 
-let target = document.querySelector('a#botton');
+let target = document.querySelector('a#button');
 var area = target.getBoundingClientRect();
 console.log(area.top, area.right, area.bottom, area.left);
 
