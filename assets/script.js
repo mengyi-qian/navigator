@@ -41,8 +41,8 @@ $('button').on('click', async () => {
     $('#cursor').css('top', top + "px");
     $('#cursor').css('left', left + "px");
     
-    let cursor = document.querySelector('#cursor');
-    if ( cursor.top > area.top && cursor.top > area.bottom && cursor.left > area.left && cursor.left < area.right ) {
+//     let cursor = document.querySelector('#cursor');
+    if ( top > area.top && top > area.bottom && left > area.left && left < area.right ) {
       target.innerHTML = "thanks";
     }
   });
