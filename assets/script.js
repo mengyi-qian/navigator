@@ -37,3 +37,12 @@ $('button').on('click', async () => {
     $('#cursor').css('left', left + "px");
   });
 });
+
+let target = document.querySelector('a#botton');
+var area = trarget.getBoundingClientRect();
+console.log(area.top, area.right, area.bottom, area.left);
+
+let cursor = document.querySelector('#cursor');
+if ( cursor.top > area.top && cursor.top > area.bottom && cursor.left > area.left && cursor.left < area.right ) {
+  target.innerHTML = "thanks"
+}
